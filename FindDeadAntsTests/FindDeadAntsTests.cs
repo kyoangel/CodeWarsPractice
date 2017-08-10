@@ -32,5 +32,16 @@ namespace FindDeadAnts.Tests
             //then
             Assert.AreEqual(0, result);
         }
+
+        [TestMethod]
+        public void Test_DeadAntCount_WHEN_four_ants_THEN_return_zero()
+        {
+            //given
+            string input = "ant ant ant ant";
+            //when
+            int result = FindDeadAnts.DeadAntCount(input);
+            //then
+            Assert.AreEqual(0, result);
+        }
     }
 }

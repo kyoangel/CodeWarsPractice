@@ -14,7 +14,7 @@ namespace FindDeadAnts
                 return 0;
 
             string result = ants.Replace("ant", "");
-
+            result = result.Replace(" ", "");
             return result.Length;
         }
     }
