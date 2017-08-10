@@ -14,18 +14,23 @@ namespace FindDeadAnts.Tests
         [TestMethod()]
         public void Test_DeadAntCount_WHEN_null_THEN_return_zero()
         {
-            Assert.AreEqual(0, FindDeadAnts.DeadAntCount(null));
+            //given
+            string input = null;
+            //when
+            int result = FindDeadAnts.DeadAntCount(input);
+            //then
+            Assert.AreEqual(0, result);
         }
 
         [TestMethod]
         public void Test_DeadAntCount_WHEN_ant_THEN_return_zero()
         {
             //given
-
+            string input = "ant";
             //when
-
+            int result = FindDeadAnts.DeadAntCount(input);
             //then
-
+            Assert.AreEqual(0, result);
         }
     }
 }

@@ -1,8 +1,0 @@
-D:\Development\GitProjects\CodeWarsPractice\FindDeadAntsTests\bin\Debug\FindDeadAntsTests.dll
-D:\Development\GitProjects\CodeWarsPractice\FindDeadAntsTests\bin\Debug\FindDeadAntsTests.pdb
-D:\Development\GitProjects\CodeWarsPractice\FindDeadAntsTests\bin\Debug\FindDeadAnts.dll
-D:\Development\GitProjects\CodeWarsPractice\FindDeadAntsTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-D:\Development\GitProjects\CodeWarsPractice\FindDeadAntsTests\bin\Debug\FindDeadAnts.pdb
-D:\Development\GitProjects\CodeWarsPractice\FindDeadAntsTests\obj\Debug\FindDeadAntsTests.csprojResolveAssemblyReference.cache
-D:\Development\GitProjects\CodeWarsPractice\FindDeadAntsTests\obj\Debug\FindDeadAntsTests.dll
-D:\Development\GitProjects\CodeWarsPractice\FindDeadAntsTests\obj\Debug\FindDeadAntsTests.pdb

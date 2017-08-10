@@ -13,7 +13,9 @@ namespace FindDeadAnts
             if (string.IsNullOrWhiteSpace(ants))
                 return 0;
 
-            return -1;
+            string result = ants.Replace("ant", "");
+
+            return result.Length;
         }
     }
 }
