@@ -13,9 +13,17 @@ namespace FindDeadAnts
             if (string.IsNullOrWhiteSpace(ants))
                 return 0;
 
-            string result = ants.Replace("ant", "");
-            result = result.Replace(" ", "");
-            return result.Length;
+            string deadAntParts = RemoveLiveAnts(ants);
+            int heads = deadAntParts.Count(x => x == 'a');
+            int bodys = deadAntParts.Count(x => x == 'n');
+            int legs = deadAntParts.Count(x => x == 't');
+
+            return Math.Max(Math.Max(heads, bodys), legs);
+        }
+
+        private static string RemoveLiveAnts(string ants)
+        {
+            return ants.Replace("ant", " ");
         }
     }
 }

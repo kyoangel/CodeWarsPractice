@@ -43,5 +43,17 @@ namespace FindDeadAnts.Tests
             //then
             Assert.AreEqual(0, result);
         }
+
+        [TestMethod]
+        public void Test_DeadAntCount_WHEN_ant_ant_a_nt_THEN_return_one()
+        {
+            //given
+            string input = "ant ant a nt";
+            //when
+            int result = FindDeadAnts.DeadAntCount(input);
+            //then
+            Assert.AreEqual(1, result);
+
+        }
     }
 }
