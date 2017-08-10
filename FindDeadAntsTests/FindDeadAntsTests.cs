@@ -22,6 +22,17 @@ namespace FindDeadAnts.Tests
             Assert.AreEqual(0, result);
         }
 
+        [TestMethod()]
+        public void Test_DeadAntCount_WHEN_empty_THEN_return_zero()
+        {
+            //given
+            string input = string.Empty;
+            //when
+            int result = FindDeadAnts.DeadAntCount(input);
+            //then
+            Assert.AreEqual(0, result);
+        }
+
         [TestMethod]
         public void Test_DeadAntCount_WHEN_ant_THEN_return_zero()
         {
@@ -53,6 +64,19 @@ namespace FindDeadAnts.Tests
             int result = FindDeadAnts.DeadAntCount(input);
             //then
             Assert.AreEqual(1, result);
+
+        }
+        
+
+            [TestMethod]
+        public void Test_DeadAntCount_WHEN_ant_anantt_aantnt_THEN_return_two()
+        {
+            //given
+            string input = "ant anantt aantnt";
+            //when
+            int result = FindDeadAnts.DeadAntCount(input);
+            //then
+            Assert.AreEqual(2, result);
 
         }
     }

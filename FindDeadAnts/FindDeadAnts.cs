@@ -18,6 +18,11 @@ namespace FindDeadAnts
             int bodys = deadAntParts.Count(x => x == 'n');
             int legs = deadAntParts.Count(x => x == 't');
 
+            return GetMaxParts(heads, bodys, legs);
+        }
+
+        private static int GetMaxParts(int heads, int bodys, int legs)
+        {
             return Math.Max(Math.Max(heads, bodys), legs);
         }
 
