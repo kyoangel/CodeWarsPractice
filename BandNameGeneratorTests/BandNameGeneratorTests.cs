@@ -55,7 +55,7 @@ namespace BandNameGenerator.Tests
         }
 
         [TestMethod]
-        public void Test_GenerateBandName_WHEN_noun_start_not_equal_end_THEN_return_the_add_caption_str()
+        public void Test_GenerateBandName_WHEN_StartNotEqualEnd_THEN_ReturnTheAddCaptionStr()
         {
             //given
             string input = "car";
@@ -69,7 +69,7 @@ namespace BandNameGenerator.Tests
         }
 
         [TestMethod]
-        public void Test_GenerateBandName_WHEN_noun_with_the_same_start_end_THEN_return_caption_double_str()
+        public void Test_GenerateBandName_WHEN_StartEqualsEnd_THEN_ReturnCaptionDoubleStr()
         {
             //given
             string input = "bob";
@@ -78,17 +78,6 @@ namespace BandNameGenerator.Tests
 
             //then
             Assert.AreEqual("Bobbob", actual);
-
-        }
-
-        [TestMethod]
-        public void Test_GenerateBandName_WHEN_situation_THEN_expected()
-        {
-            //given
-
-            //when
-
-            //then
 
         }
     }
