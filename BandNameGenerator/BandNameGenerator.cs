@@ -14,11 +14,17 @@ namespace BandNameGenerator
             if (string.IsNullOrEmpty(str))
                 throw new ArgumentException("input string should not be null or empty"); ;
 
-            if (str.Length == 1)
-                return str + str;
-
             var result = "";
-            result = "The " + str[0].ToString().ToUpper() + str.Substring(1,str.Length -1);
+            var start = str[0].ToString();
+            var end = str[str.Length-1].ToString();
+            if (start.Equals(end))
+            {
+                result = str[0].ToString().ToUpper() + str.Substring(1, str.Length - 1) + str;
+            }
+            else
+            {
+                result = "The " + str[0].ToString().ToUpper() + str.Substring(1,str.Length -1);
+            }
 
             return result;
         }

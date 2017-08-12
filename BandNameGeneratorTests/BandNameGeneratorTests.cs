@@ -14,7 +14,7 @@ namespace BandNameGenerator.Tests
         [TestMethod]
         [ExpectedException(typeof(ArgumentException),
             "A team name should not be null or empty.")]
-        public void Test_GenerateBandName_WHEN_input_empty_THEN_return_argumentExceptino()
+        public void Test_GenerateBandName_WHEN_InputEmptyStr_THEN_ThrowException()
         {
             //given
             string input = "";
@@ -29,7 +29,7 @@ namespace BandNameGenerator.Tests
         [TestMethod]
         [ExpectedException(typeof(ArgumentException),
             "A team name should not be null or empty.")]
-        public void Test_GenerateBandName_WHEN_input_null_THEN_return_argumentExceptino()
+        public void Test_GenerateBandName_WHEN_InputNullStr_THEN_ThrowException()
         {
             //given
             string input = null;
@@ -42,7 +42,7 @@ namespace BandNameGenerator.Tests
         }
 
         [TestMethod]
-        public void Test_GnerateBandName_WHEN_input_single_char_THEN_return_double_char()
+        public void Test_GenerateBandName_WHEN_InputSingleChar_THEN_ReturnCaptionDoubleChars()
         {
             //given
             string input = "a";
@@ -51,7 +51,7 @@ namespace BandNameGenerator.Tests
             string actual = BandNameGenerator.GenerateBandName(input);
 
             //then
-            Assert.AreEqual("aa", actual);
+            Assert.AreEqual("Aa", actual);
         }
 
         [TestMethod]
@@ -65,6 +65,30 @@ namespace BandNameGenerator.Tests
 
             //then
             Assert.AreEqual("The Car", actual);
+
+        }
+
+        [TestMethod]
+        public void Test_GenerateBandName_WHEN_noun_with_the_same_start_end_THEN_return_caption_double_str()
+        {
+            //given
+            string input = "bob";
+            //when
+            string actual = BandNameGenerator.GenerateBandName(input);
+
+            //then
+            Assert.AreEqual("Bobbob", actual);
+
+        }
+
+        [TestMethod]
+        public void Test_GenerateBandName_WHEN_situation_THEN_expected()
+        {
+            //given
+
+            //when
+
+            //then
 
         }
     }
