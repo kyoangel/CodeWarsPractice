@@ -15,11 +15,9 @@ namespace BandNameGenerator
                 throw new ArgumentException("input string should not be null or empty"); ;
 
             var result = "";
-            var start = str[0].ToString();
-            var end = str[str.Length - 1].ToString();
-            if (start.Equals(end))
+            if (IsStartELetterqualsEnd(str))
             {
-                result = DoCaption(str) + str.Substring(1, str.Length - 1);
+                result = DoCaption(str) + RemoveFirstLetter(str);
             }
             else
             {
@@ -29,9 +27,22 @@ namespace BandNameGenerator
             return result;
         }
 
+        private static bool IsStartELetterqualsEnd(string str)
+        {
+            var start = str[0].ToString();
+            var end = str[str.Length - 1].ToString();
+
+            return start.Equals(end);
+        }
+
         private static string DoCaption(string str)
         {
-            return str[0].ToString().ToUpper() + str.Substring(1, str.Length - 1);
+            return str[0].ToString().ToUpper() + RemoveFirstLetter(str);
+        }
+
+        private static string RemoveFirstLetter(string str)
+        {
+            return str.Substring(1, str.Length - 1);
         }
     }
 }
