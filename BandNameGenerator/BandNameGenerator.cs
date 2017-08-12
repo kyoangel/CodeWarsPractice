@@ -14,7 +14,17 @@ namespace BandNameGenerator
             if (string.IsNullOrEmpty(str))
                 throw new ArgumentException("input string should not be null or empty"); ;
 
-            return IsStartELetterqualsEnd(str) ? DoCaption(str) + RemoveFirstLetter(str) : "The " + DoCaption(str);
+            return IsStartELetterqualsEnd(str) ? MakeRepeatStyle(str) : MakeLeadingTheStyle(str);
+        }
+
+        private static string MakeLeadingTheStyle(string str)
+        {
+            return "The " + DoCaption(str);
+        }
+
+        private static string MakeRepeatStyle(string str)
+        {
+            return DoCaption(str) + RemoveFirstLetter(str);
         }
 
         private static bool IsStartELetterqualsEnd(string str)
