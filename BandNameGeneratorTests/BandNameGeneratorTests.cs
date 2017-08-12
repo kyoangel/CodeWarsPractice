@@ -51,7 +51,7 @@ namespace BandNameGenerator.Tests
             string actual = BandNameGenerator.GenerateBandName(input);
 
             //then
-            Assert.AreEqual("Aa", actual);
+            Assert.AreEqual("A", actual);
         }
 
         [TestMethod]
@@ -77,7 +77,7 @@ namespace BandNameGenerator.Tests
             string actual = BandNameGenerator.GenerateBandName(input);
 
             //then
-            Assert.AreEqual("Bobbob", actual);
+            Assert.AreEqual("Bobob", actual);
 
         }
     }

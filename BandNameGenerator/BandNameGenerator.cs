@@ -16,17 +16,22 @@ namespace BandNameGenerator
 
             var result = "";
             var start = str[0].ToString();
-            var end = str[str.Length-1].ToString();
+            var end = str[str.Length - 1].ToString();
             if (start.Equals(end))
             {
-                result = str[0].ToString().ToUpper() + str.Substring(1, str.Length - 1) + str;
+                result = DoCaption(str) + str.Substring(1, str.Length - 1);
             }
             else
             {
-                result = "The " + str[0].ToString().ToUpper() + str.Substring(1,str.Length -1);
+                result = "The " + DoCaption(str);
             }
 
             return result;
+        }
+
+        private static string DoCaption(string str)
+        {
+            return str[0].ToString().ToUpper() + str.Substring(1, str.Length - 1);
         }
     }
 }
