@@ -41,6 +41,17 @@ namespace CountingDuplicates.Tests
             AssertDuplicateCountByInputString(1, "GG");
         }
 
+        [TestMethod]
+        public void Test_DuplicateCount_By_KataSamples()
+        {
+            AssertDuplicateCountByInputString(0, "");
+            AssertDuplicateCountByInputString(0, "abcde");
+            AssertDuplicateCountByInputString(2, "aabbcde");
+            AssertDuplicateCountByInputString(2, "aabBcde");
+            AssertDuplicateCountByInputString(1, "Indivisibility");
+            AssertDuplicateCountByInputString(2, "Indivisibilities");
+        }
+
         private static void AssertDuplicateCountByInputString(int expected, string input)
         {
             //given param input
