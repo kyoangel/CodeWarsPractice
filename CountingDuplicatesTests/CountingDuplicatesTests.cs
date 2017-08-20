@@ -25,6 +25,14 @@ namespace CountingDuplicates.Tests
 
         }
 
+        [TestMethod]
+        public void Test_DuplicateCount_WHEN_noDuplicate_THEN_returnZero()
+        {
+            AssertDuplicateCountByInputString(0, "string");
+            AssertDuplicateCountByInputString(0, "unity");
+            AssertDuplicateCountByInputString(0, "Girl");
+        }
+
         private static void AssertDuplicateCountByInputString(int expected, string input)
         {
             //given param input
