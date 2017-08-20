@@ -15,19 +15,14 @@ namespace CountingDuplicates
 
             int length = str.Length;
             str = str.ToLower();
-            Dictionary<char, int> letterCount = new Dictionary<char, int>();
 
-            for (int i = 0; i < length; i++)
-            {
-                if (!letterCount.ContainsKey(str[i]))
-                {
-                    letterCount.Add(str[i], 0);
-                } else
-                {
-                    letterCount[str[i]] += 1;
-                }
-            }
+            Dictionary<char, int> letterCount = PrepareLetterCount(str, length);
 
+            return CalculateDuplicateLetters(letterCount);
+        }
+
+        private static int CalculateDuplicateLetters(Dictionary<char, int> letterCount)
+        {
             var result = 0;
 
             foreach (var value in letterCount.Values)
@@ -36,9 +31,28 @@ namespace CountingDuplicates
                 {
                     result += 1;
                 }
-            } 
-           
+            }
+
             return result;
+        }
+
+        private static Dictionary<char, int> PrepareLetterCount(string str, int length)
+        {
+            Dictionary<char, int> letterCount = new Dictionary<char, int>();
+
+            for (int i = 0; i < length; i++)
+            {
+                if (!letterCount.ContainsKey(str[i]))
+                {
+                    letterCount.Add(str[i], 0);
+                }
+                else
+                {
+                    letterCount[str[i]] += 1;
+                }
+            }
+
+            return letterCount;
         }
     }
 }
