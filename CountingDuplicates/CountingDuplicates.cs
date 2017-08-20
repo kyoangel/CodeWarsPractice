@@ -14,7 +14,7 @@ namespace CountingDuplicates
                 return 0;
 
             int length = str.Length;
-
+            str = str.ToLower();
             Dictionary<char, int> letterCount = new Dictionary<char, int>();
 
             for (int i = 0; i < length; i++)

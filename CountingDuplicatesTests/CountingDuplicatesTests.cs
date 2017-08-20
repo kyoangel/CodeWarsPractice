@@ -33,6 +33,14 @@ namespace CountingDuplicates.Tests
             AssertDuplicateCountByInputString(0, "Girl");
         }
 
+        [TestMethod]
+        public void Test_DuplicateCount_WHEN_oneDuplicate_THEN_returnOne()
+        {
+            AssertDuplicateCountByInputString(1, "Test");
+            AssertDuplicateCountByInputString(1, "Greedy");
+            AssertDuplicateCountByInputString(1, "GG");
+        }
+
         private static void AssertDuplicateCountByInputString(int expected, string input)
         {
             //given param input
