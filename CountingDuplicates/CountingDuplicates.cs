@@ -10,7 +10,7 @@ namespace CountingDuplicates
     {
         public static int DuplicateCount(string str)
         {
-            if(string.IsNullOrWhiteSpace(str))
+            if (string.IsNullOrWhiteSpace(str) || str.Length == 1)
                 return 0;
 
             return -1;

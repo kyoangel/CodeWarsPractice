@@ -23,5 +23,19 @@ namespace CountingDuplicates.Tests
             //then
             Assert.AreEqual(0, result);
         }
+
+        [TestMethod]
+        public void Test_DuplicateCount_WHEN_inputOneChar_THEN_returnZero()
+        {
+            //given
+            string input = "a";
+            //when
+            int result = CountingDuplicates.DuplicateCount(input);
+
+            //then
+            Assert.AreEqual(0, result);
+
+        }
+
     }
 }
