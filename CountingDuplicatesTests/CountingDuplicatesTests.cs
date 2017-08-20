@@ -14,27 +14,26 @@ namespace CountingDuplicates.Tests
         [TestMethod]
         public void Test_DuplicateCount_WHEN_inputNull_THEN_returnZero()
         {
-            //given
-            string input = null;
-
-            //when
-            int result = CountingDuplicates.DuplicateCount(input);
-
-            //then
-            Assert.AreEqual(0, result);
+            AssertDuplicateCountByInputString(0, null);
         }
+
 
         [TestMethod]
         public void Test_DuplicateCount_WHEN_inputOneChar_THEN_returnZero()
         {
-            //given
-            string input = "a";
+            AssertDuplicateCountByInputString(0, "a");
+
+        }
+
+        private static void AssertDuplicateCountByInputString(int expected, string input)
+        {
+            //given param input
+
             //when
             int result = CountingDuplicates.DuplicateCount(input);
 
             //then
-            Assert.AreEqual(0, result);
-
+            Assert.AreEqual(expected, result);
         }
 
     }
