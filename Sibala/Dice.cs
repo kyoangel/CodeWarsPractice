@@ -44,24 +44,23 @@ namespace Sibala
 
             var result = "";
 
-            if (pairs.Count == 0)
+            switch (pairs.Count)
             {
-                result = DiceType.NoPoint.ToString();
-            }
-
-            if (pairs.Count == 1)
-            {
-                result = (noPair.Count == 0) ?
+                case 0:
+                    result = DiceType.NoPoint.ToString();
+                    break;
+                case 1:
+                    result = (noPair.Count == 0) ?
                     DiceType.All.ToString() + pairs[0].ToString() :
                     noPair.Sum() + DiceType.Points.ToString();
+                    break;
+                case 2:
+                    points = diceList.Max() * 2;
+                    result = points.ToString() + DiceType.Points.ToString();
+                    break;
+                default:
+                    break;
             }
-
-            if (pairs.Count == 2)
-            {
-                points = diceList.Max() * 2;
-                result = points.ToString() + DiceType.Points.ToString();
-            }
-
 
             return result;
         }
