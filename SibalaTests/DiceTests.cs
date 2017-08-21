@@ -58,5 +58,29 @@ namespace Sibala.Tests
             //then
             Assert.AreEqual("11Points", result);
         }
+
+        [TestMethod]
+        public void Test_Calculate_WHEN_input3312_THEN_returnBG()
+        {
+            //given
+            Dice d = new Dice(3, 3, 1, 2);
+            //when
+            string result = d.Calculate();
+
+            //then
+            Assert.AreEqual("BG", result);
+        }
+
+        [TestMethod]
+        public void Test_Calculate_WHEN_input1166_THEN_returnEighteenLa()
+        {
+            //given
+            Dice d = new Dice(1, 1, 6, 6);
+            //when
+            string result = d.Calculate();
+
+            //then
+            Assert.AreEqual("EighteenLa", result);
+        }
     }
 }
