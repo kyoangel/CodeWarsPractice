@@ -1,11 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Sibala
 {
+
+    public enum DiceType
+    {
+        BG,
+        NoPoint,
+        Points,
+        EighteenLa,
+        All
+    }
 
     public class Dice
     {
@@ -20,8 +30,40 @@ namespace Sibala
 
         public string Calculate()
         {
+            var points = 0;
 
-            return "NoPoint";
+            List<int> pairs = diceList.GroupBy(x => x)
+                             .Where(g => g.Count() > 1)
+                             .Select(g => g.Key)
+                             .ToList();
+
+            List<int> noPair = diceList.GroupBy(x => x)
+                 .Where(g => g.Count() == 1)
+                 .Select(g => g.Key)
+                 .ToList();
+
+            var result = "";
+
+            if (pairs.Count == 0)
+            {
+                result = DiceType.NoPoint.ToString();
+            }
+
+            if (pairs.Count == 1)
+            {
+                result = (noPair.Count == 0) ?
+                    DiceType.All.ToString() + pairs[0].ToString() :
+                    noPair.Sum() + DiceType.Points.ToString();
+            }
+
+            if (pairs.Count == 2)
+            {
+                points = diceList.Max() * 2;
+                result = points.ToString() + DiceType.Points.ToString();
+            }
+
+
+            return result;
         }
     }
 }

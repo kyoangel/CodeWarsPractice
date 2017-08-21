@@ -22,5 +22,41 @@ namespace Sibala.Tests
             //then
             Assert.AreEqual("NoPoint", result);
         }
+
+        [TestMethod]
+        public void Test_Calculate_WHEN_input2255_THEN_return10Point()
+        {
+            //given
+            Dice d = new Dice(2, 2, 5, 5);
+            //when
+            string result = d.Calculate();
+
+            //then
+            Assert.AreEqual("10Points", result);
+        }
+
+        [TestMethod]
+        public void Test_Calculate_WHEN_input4444_THEN_returnAll4()
+        {
+            //given
+            Dice d = new Dice(4, 4, 4, 4);
+            //when
+            string result = d.Calculate();
+
+            //then
+            Assert.AreEqual("All4", result);
+        }
+
+        [TestMethod]
+        public void Test_Calculate_WHEN_input2256_THEN_return11Points()
+        {
+            //given
+            Dice d = new Dice(2, 2, 5, 6);
+            //when
+            string result = d.Calculate();
+
+            //then
+            Assert.AreEqual("11Points", result);
+        }
     }
 }
