@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sibala", "Sibala.csproj", "{81215836-2842-4253-B046-847D2158A773}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SibalaTests", "..\SibalaTests\SibalaTests.csproj", "{71D26BA4-A33B-4DD7-92B4-A0ED9AF41421}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81215836-2842-4253-B046-847D2158A773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81215836-2842-4253-B046-847D2158A773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81215836-2842-4253-B046-847D2158A773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81215836-2842-4253-B046-847D2158A773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D26BA4-A33B-4DD7-92B4-A0ED9AF41421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D26BA4-A33B-4DD7-92B4-A0ED9AF41421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D26BA4-A33B-4DD7-92B4-A0ED9AF41421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D26BA4-A33B-4DD7-92B4-A0ED9AF41421}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
