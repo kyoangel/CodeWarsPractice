@@ -15,14 +15,18 @@ namespace TwoSum.Tests
         }
 
         [TestMethod()]
-        public void Test_ExactlySolution()
+        public void Test_ExactlySolution_PairNotTheSame()
         {
-            var actual = TwoSumLeetCode.TwoSum(new int[] { 3,2,3 }, 6);
+            var actual = TwoSumLeetCode.TwoSum(new int[] { 2, 3, 4, 5 }, 6);
             Assert.AreEqual(true, actual.SequenceEqual(new int[] { 0, 2 }));
 
-            actual = TwoSumLeetCode.TwoSum(new int[] { 2, 3, 4 }, 6);
-            Assert.AreEqual(true, actual.SequenceEqual(new int[] { 0, 2 }));
+        }
 
+        [TestMethod]
+        public void Test_DuplicatePairArray_Solution()
+        {
+            var actual = TwoSumLeetCode.TwoSum(new int[] { 3, 2, 3 }, 6);
+            Assert.AreEqual(true, actual.SequenceEqual(new int[] { 0, 2 }));
         }
     }
 }
