@@ -1,18 +1,23 @@
-﻿namespace TwoSum
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace TwoSum
 {
     public class TwoSumLeetCode
     {
         public static int[] TwoSum(int[] nums, int target)
         {
-            for (int i = 0; i < nums.Length; i++)
+            int length = nums.Length;
+            Hashtable map = new Hashtable();
+            for (int i = 0; i < length; i++)
             {
-                for (int j = i + 1; j < nums.Length; j++)
+                int anotherPair = target - nums[i];
+                if (map.ContainsKey(anotherPair))
                 {
-                    if (nums[j] == target - nums[i])
-                    {
-                        return new int[] { i, j };
-                    }
+                    return new int[] { (int)map[anotherPair], i };
                 }
+                if (!map.ContainsKey(nums[i]))
+                    map.Add(nums[i], i);
             }
             throw new System.ArgumentException("No two sum solution");
         }
