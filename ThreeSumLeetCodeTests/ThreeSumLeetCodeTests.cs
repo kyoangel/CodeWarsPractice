@@ -11,6 +11,13 @@ namespace ThreeSumLeetCode.Tests
     [TestClass()]
     public class ThreeSumLeetCodeTests
     {
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException),"Array length is too short")]
+        public void ArrayTooshort()
+        {
+            var actual = ThreeSumLeetCode.ThreeSum(new int[] { -1, 0 });
+        }
+
         [TestMethod()]
         public void ThreeSumTest()
         { 
@@ -21,6 +28,14 @@ namespace ThreeSumLeetCode.Tests
                 Assert.IsTrue(actual[i].SequenceEqual(expect[i]));
             }
             
+        }
+
+        [TestMethod]
+        public void NoAnswer()
+        {
+            var actual = ThreeSumLeetCode.ThreeSum(new int[] { -7, -3, 0, 2, 4, 8 });
+            var expect = new List<IList<int>>();
+            Assert.AreEqual(expect.Count, actual.Count);
         }
     }
 }

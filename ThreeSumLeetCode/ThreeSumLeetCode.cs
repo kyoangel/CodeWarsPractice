@@ -12,6 +12,10 @@ namespace ThreeSumLeetCode
         public static IList<IList<int>> ThreeSum(int[] nums)
         {
             int length = nums.Length;
+            if (length < 3)
+            {
+                throw new ArgumentException("Array length is too short");
+            }
             IList<IList<int>> result = new List<IList<int>>();
             Array.Sort(nums);
 
