@@ -13,40 +13,35 @@ namespace KataContainsDuplicate2
             if (nums.Length < 2)
                 return false;
 
-            var dictionary = new Dictionary<int, int>();
-            var dup_dictionary = new Dictionary<int, int>();
+            var keyIndexPairMap = new Dictionary<int, int>();
+            var duplicatedKeyIndexPairMap = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
             {
-                if (!dictionary.ContainsKey(nums[i]))
+                if (!keyIndexPairMap.ContainsKey(nums[i]))
                 {
-                    dictionary.Add(nums[i], i);
+                    keyIndexPairMap.Add(nums[i], i);
                 }
                 else
                 {
-                    if (dup_dictionary.ContainsKey(nums[i]))
+                    if (duplicatedKeyIndexPairMap.ContainsKey(nums[i]))
                     {
-                        
-                        if (Math.Abs(dictionary[nums[i]] - dup_dictionary[nums[i]]) > Math.Abs(i - dup_dictionary[nums[i]]))
-                        {
-                            dictionary.Remove(nums[i]);
-                            dictionary.Add(nums[i], i);
-                        }
+                        KeepMinIndexDistance(nums, keyIndexPairMap, duplicatedKeyIndexPairMap, i);
                     }
                     else
                     {
-                        dup_dictionary.Add(nums[i], i);
+                        duplicatedKeyIndexPairMap.Add(nums[i], i);
                     }
                 }
 
             }
 
-            if (dup_dictionary.Count == 0)
+            if (IsNoDuplicateElement(duplicatedKeyIndexPairMap))
                 return false;
             else
             {
-                foreach (var item in dup_dictionary)
+                foreach (var item in duplicatedKeyIndexPairMap)
                 {
-                    if (Math.Abs(item.Value - dictionary[item.Key]) > k)
+                    if (Math.Abs(item.Value - keyIndexPairMap[item.Key]) > k)
                     {
                         return false;
                     }
@@ -54,6 +49,20 @@ namespace KataContainsDuplicate2
             }
 
             return true;
+        }
+
+        private static void KeepMinIndexDistance(int[] nums, Dictionary<int, int> keyIndexPairMap, Dictionary<int, int> duplicatedKeyIndexPairMap, int i)
+        {
+            if (Math.Abs(keyIndexPairMap[nums[i]] - duplicatedKeyIndexPairMap[nums[i]]) > Math.Abs(i - duplicatedKeyIndexPairMap[nums[i]]))
+            {
+                keyIndexPairMap.Remove(nums[i]);
+                keyIndexPairMap.Add(nums[i], i);
+            }
+        }
+
+        private static bool IsNoDuplicateElement(Dictionary<int, int> duplicatedKeyIndexPairMap)
+        {
+            return duplicatedKeyIndexPairMap.Count == 0;
         }
     }
 }
