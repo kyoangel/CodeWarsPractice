@@ -8,10 +8,10 @@ namespace TwoSum.Tests
     public class TwoSumLeetCodeTests
     {
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentException), "No two sum solution")]
         public void Test_ZeroArray_Then_Throw_ArgumentException()
         {
             var actual = TwoSumLeetCode.TwoSum(new int[] { }, 0);
+            Assert.AreEqual(true, actual.SequenceEqual(new int[2]));
         }
 
         [TestMethod()]
